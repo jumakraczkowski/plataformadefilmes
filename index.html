@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARCA - Streaming</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        color: white;
+        background: url("caapa.jpg") no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+      }
+
+      header {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 15px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo {
+        height: 60px;
+        margin-top; -25px;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-right: 20px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      .language-menu {
+        position: relative;
+        margin-left: 20px;
+      }
+
+      .language-btn {
+        background: transparent;
+        color: white;
+        border: 1px solid white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .language-dropdown {
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.9);
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        right: 0;
+      }
+
+      .language-menu:hover .language-dropdown {
+        display: block;
+      }
+
+      .language-dropdown a {
+        display: block;
+        padding: 12px 16px;
+        color: white;
+        text-decoration: none;
+      }
+
+      .language-dropdown a:hover {
+        background-color: #e50914;
+      }
+
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .search-icon,
+      .kids-icon,
+      .notification-icon,
+      .user-menu {
+        cursor: pointer;
+      }
+
+      .main-content {
+        padding-top: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .featured {
+        width: 100%;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        color: #fff;
+        position: relative;
+      }
+
+      .n-serie-title {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .n-image {
+        height: 30px; /* ajuste conforme desejar */
+        width: auto;
+        margin-right: 5px;
+        display: block;
+      }
+
+      .n-serie-title .serie {
+        color: white;
+        font-size: 1em;
+        letter-spacing: 1px;
+      }
+
+      .featured h2 {
+        font-size: 3em;
+        margin-top: 50px;
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px red, 0 0 20px red;
+        text-align: center;
+      }
+
+      .featured .details {
+        font-size: 1em;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      /* CARROSSEL AJUSTADO */
+      .carousel {
+        display: flex;
+        overflow-x: auto;
+        padding: 20px 0;
+        scrollbar-width: thin;
+        margin-top: 80px;
+      }
+
+      .carousel-item {
+        display: flex;
+        align-items: center;
+        min-width: auto;
+        flex-shrink: 0;
+        margin-right: 5px;
+      }
+
+      .carousel-item span {
+        font-weight: bold;
+        font-size: 100px;
+        color: white;
+        margin-right: 5px;
+        line-height: 1;
+      }
+
+      .carousel-item img {
+        width: 120px;
+        height: auto;
+        border-radius: 4px;
+        transition: transform 0.3s;
+      }
+
+      .carousel-item img:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="NETFLIXXX.jpg" alt="ARCA Streaming" class="logo" />
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Séries</a></li>
+          <li><a href="#">Filmes</a></li>
+          <li><a href="#">Bombando</a></li>
+          <li><a href="#">Minha Lista</a></li>
+        </ul>
+        <div class="language-menu">
+          <button class="language-btn">🌐 Português</button>
+          <div class="language-dropdown">
+            <a href="#">Português</a>
+            <a href="#">English</a>
+            <a href="#">Español</a>
+            <a href="#">Français</a>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="search-icon" title="Pesquisar">🔍</div>
+          <div class="kids-icon" title="Infantil">🧒</div>
+          <div class="notification-icon" title="Notificações">🔔</div>
+          <div class="user-menu" title="Menu do usuário">
+            <img
+              src="filme-rio.jpg"
+              alt="Perfil do usuário"
+              style="width: 32px; height: 32px; border-radius: 4px"
+            />
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <div class="featured">
+        <div class="n-serie-title">
+          <img src="n.png" alt="N Netflix" class="n-image" />
+          <span class="serie">SÉRIE</span>
+        </div>
+        <h2>STRANGER THINGS</h2>
+        <div class="details">
+          2016 | A16 | 4 temporadas | Ficção científica<br />
+          Quando um garoto desaparece, a cidade toda participa nas buscas. Mas o
+          que encontram são segredos, forças sobrenaturais e uma menina.<br />
+          <strong>Estrelando:</strong> Winona Ryder, David Harbour, Millie Bobby
+          Brown<br />
+          <strong>Criação:</strong> The Duffer Brothers
+        </div>
+      </div>
+    </div>
+
+    <!-- CARROSSEL FINAL -->
+    <div class="carousel">
+      <div class="carousel-item">
+        <span>1</span>
+        <img src="1.jpg".jpg" alt="Imagem 1" />
+      </div>
+      <div class="carousel-item">
+        <span>2</span>
+        <img src="2.png" alt="Imagem 2" />
+      </div>
+      <div class="carousel-item">
+        <span>3</span>
+        <img src="3.jpg" alt="Imagem 3" />
+      </div>
+      <div class="carousel-item">
+        <span>4</span>
+        <img src="5.jpg" alt="Imagem 4" />
+      </div>
+      <div class="carousel-item">
+        <span>5</span>
+        <img src="5..jpg" alt="Imagem 5" />
+      </div>
+      <div class="carousel-item">
+        <span>6</span>
+        <img src="6.jpeg" alt="Imagem 6" />
+      </div>
+      <div class="carousel-item">
+        <span>7</span>
+        <img src="7.jpeg" alt="Imagem 7" />
+      </div>
+      <div class="carousel-item">
+        <span>8</span>
+        <img src="8.jpg" alt="Imagem 8" />
+      </div>
+      <div class="carousel-item">
+        <span>9</span>
+        <img src="9.png" alt="Imagem 9" />
+      </div>
+      <div class="carousel-item">
+        <span>10</span>
+        <img src="10.jpeg" alt="Imagem 10" />
+      </div>
+    </div>
+  </body>
+</html>
